@@ -737,14 +737,21 @@ def register_user(request):
             user_data["location_area"] = received_json_data["location_area"]
 
 
-            if "location_sublocality" in received_json_data:    
-                user_data["location_sublocality"] = received_json_data["location_sublocality"]
+            if "location_sublocality" in received_json_data:
+                if received_json_data["location_sublocality"] != "":
+                    user_data["location_sublocality"] = received_json_data["location_sublocality"]
+                else:
+                    user_data["location_sublocality"] = "NOT AVAILABLE"
+
             else:
-                user_data["location_sublocality"] = "NONE"
+                user_data["location_sublocality"] = "NOT AVAILABLE"
 
 
             if "location_locality" in received_json_data:
-                user_data["location_locality"] = received_json_data["location_locality"]
+                if received_json_data["location_sublocality"] != "":
+                    user_data["location_locality"] = received_json_data["location_locality"]
+                else:
+                    user_data["location_locality"] = "NOT AVAILABLE"
             else:
                 user_data["location_locality"] = "NONE"
 
@@ -765,7 +772,8 @@ def register_user(request):
             user_data["age"] = received_json_data["age"]
             user_data["gender"] = received_json_data["gender"][0]
 
-
+            # print("serrrddaa")
+            # print(user_data)
 
             user_form = UserFormCustomer(user_data)
             profile_form = UserProfileInfoForm(data=user_data)
@@ -786,7 +794,7 @@ def register_user(request):
                 print("errorsa")
                 print(user_form.errors)
                 print(profile_form.errors)
-                return HttpResponse(json.dumps({"SUCCESS":True, "RESPONSE_MESSAGE":"Error", "ERROR":profile_form.errors} ), content_type="application/json")
+                return HttpResponse(json.dumps({"SUCCESS":False, "RESPONSE_MESSAGE":"Error", "ERROR":profile_form.errors} ), content_type="application/json")
 
             return HttpResponse(json.dumps({"SUCCESS":True, "RESPONSE_MESSAGE":"User Created SUccessfully"}), content_type="application/json")
         else:
