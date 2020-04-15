@@ -736,7 +736,8 @@ def register_user(request):
 
             user_data["location_area"] = received_json_data["location_area"]
 
-            if received_json_data["location_sublocality"]:
+
+            if "location_sublocality" in received_json_data:    
                 user_data["location_sublocality"] = received_json_data["location_sublocality"]
             else:
                 user_data["location_sublocality"] = "NONE"
