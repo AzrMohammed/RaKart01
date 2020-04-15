@@ -740,8 +740,17 @@ def register_user(request):
             else:
                 user_data["location_sublocality"] = "NONE"
 
-            user_data["location_locality"] = received_json_data["location_locality"]
-            user_data["location_city"] = received_json_data["location_city"]
+
+            if received_json_data["location_locality"]:
+                user_data["location_locality"] = received_json_data["location_locality"]
+            else:
+                user_data["location_locality"] = "NONE"
+
+            if received_json_data["location_city"]:
+                user_data["location_city"] = received_json_data["location_city"]
+            else:
+                user_data["location_city"] = "NONE"
+
             user_data["location_state"] = received_json_data["location_state"]
 
             user_data["location_pincode"] = received_json_data["pincode"]
