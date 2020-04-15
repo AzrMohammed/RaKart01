@@ -1,0 +1,65 @@
+# USER_TYPES = [
+#         (USER_TYPE_SUPER_ADMIN, 'SUPER_ADMIN'),
+#         (USER_TYPE_MANAGER, 'MANAGER'),
+#         (USER_TYPE_CONSUMER, 'CONSUMER'),
+#         (USER_TYPE_DELIVERY_AGENT, 'DELIVERY_AGENT'),
+#         (USER_TYPE_BUSINESS_OWNER, 'BUSINESS_OWNER'),
+#         (USER_TYPE_CUSTOMER_CARE_EXECUTIVE,'CUSTOMER_CARE')
+#      ]
+#
+# USER_TYPES_DIC = dict(USER_TYPES)
+
+SERVER_PREFIX = "http://192.168.0.100:8000/"
+
+# Enterprise | Personal | Official | SecondPerson-Agent
+
+# Communication Types
+ENTERPRISE = 'ENTPRS'
+PERSONAL = 'PRSNL'
+OFFICIAL = 'OFICIL'
+SECOND_PARTY_AGENT = 'SECPAG'
+
+GEN_COMMUNICATION_TYPES = [
+        (ENTERPRISE, 'Enterprise'),
+        (PERSONAL, 'Personal'),
+        (OFFICIAL, 'Official'),
+        (SECOND_PARTY_AGENT, 'SecondPerson-Agent'),
+     ]
+
+GEN_COMMUNICATION_TYPES_DIC = dict(GEN_COMMUNICATION_TYPES)
+
+
+
+# Phone | Email | Skpye
+# Communication channel  Types
+
+PHONE = 'PHN'
+EMAIL = 'EML'
+SKYPE = 'SKP'
+
+GEN_COMMUNICATION_CHANNEL_TYPES = [
+        (PHONE, 'PHONE'),
+        (EMAIL, 'EMAIL'),
+        (SKYPE, 'SKYPE'),
+     ]
+
+GEN_COMMUNICATION_CHANNEL_TYPES_DIC = dict(GEN_COMMUNICATION_CHANNEL_TYPES)
+
+
+
+
+
+MOD_DT_SLUG =  ("MOD_DT_SLUG", 8, "Slug")
+MOD_DT_EMAIL = ("MOD_DT_EMAIL", 30, "Email Address")
+MOD_DT_NAME = ("MOD_DT_NAME", 30, "Name")
+MOD_DT_TEXT = ("MOD_DT_TEXT", 100, "Text")
+MOD_DT_BOOL = ("MOD_DT_BOOL", 1, "Select")
+MOD_DT_TEXTAREA_01 = ("MOD_DT_TEXTAREA_01", 150, "Text")
+MOD_DT_TEXTAREA_02 = ("MOD_DT_TEXTAREA_02", 250, "Text")
+MOD_DT_PHONE = ("MOD_DT_PHONE", 10, "Phone Number")
+MOD_DT_PINCODE = ("MOD_DT_PINCODE", 6, "Pincode")
+MOD_DT_LAT_LONG = ("MOD_DT_LAT_LONG", 25, "Latitude/Longitude")
+MOD_DT_CHOICE_LIMITED = ("MOD_DT_CHOICE_LIMITED", 250, "Choice")
+MOD_DT_CHOICE_UNLIMITED = ("MOD_DT_CHOICE_UNLIMITED", 250, "Search Here")
+
+# DT_ = "DT_"
