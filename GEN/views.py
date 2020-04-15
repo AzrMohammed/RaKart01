@@ -731,22 +731,24 @@ def register_user(request):
             user_data["phone_primary"] = phone
             user_data["phone_secondary"] = received_json_data["whatsapp"]
 
-            if received_json_data["user_language"]:
+            if "user_language" in received_json_data:
                 user_data["user_language"] = received_json_data["user_language"]
 
             user_data["location_area"] = received_json_data["location_area"]
+
             if received_json_data["location_sublocality"]:
                 user_data["location_sublocality"] = received_json_data["location_sublocality"]
             else:
                 user_data["location_sublocality"] = "NONE"
 
 
-            if received_json_data["location_locality"]:
+            if "location_locality" in received_json_data:
                 user_data["location_locality"] = received_json_data["location_locality"]
             else:
                 user_data["location_locality"] = "NONE"
 
-            if received_json_data["location_city"]:
+
+            if "location_city" in received_json_data:
                 user_data["location_city"] = received_json_data["location_city"]
             else:
                 user_data["location_city"] = "NONE"
