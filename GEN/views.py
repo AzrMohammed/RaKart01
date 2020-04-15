@@ -1180,9 +1180,9 @@ def orders_list(request):
         for order_item in order_items:
 
             if item_name != '':
-                item_name += ", "+str(order_item.product)
+                item_name += ", "+str(order_item.product)+" : " +str(order_item.item_quantity) + " " +str(order_item.measurement_unit)
             else:
-                item_name += str(order_item.product)
+                item_name += str(order_item.product) +" : " +str(order_item.item_quantity) + " " +str(order_item.measurement_unit) 
 
         order_temp.order_items = item_name
 

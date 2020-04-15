@@ -2,3 +2,5 @@
 /GEN/_pycache_/*
 /GEN/media/*
 /ierpa_base_flow_01/_pycache_/*
+db.sqlite3
+*.sqlite3
